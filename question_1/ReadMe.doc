@@ -1,0 +1,37 @@
+HOW TO RUN:
+STEP 1 - Run this command in the terminal of folder "npm install -g ts-node typescript '@types/node'"
+STEP 2 - Run command "ts-node Task.ts"
+Enjoy the answer;
+
+ALSO add test cases according to you. But try to give login time and last seen before current date.
+
+
+
+Question 1 Details:
+	Given : logged_in, logged_out, and lastSeenAt
+	To Formulate : monthly logged in user and active users.
+	Assumptions: 1. Active user = if they have logged in at least once during a month, regardless of the duration of their session and used it once.
+				 2. Logged_in user = User who is current logged_in,but not necessarly used website in current month.
+				 3. In database : 
+						- Since we can login using multiple devices, I assume that we have saved individual records of session times from each of their devices where userId and deviceId is used as foreign keys.
+						- LastSeen is saved in user details since it is common for all devices.
+				 4.Consistent Timezone.
+                 5.Session expires in 6 months.
+				 
+	SOLUTION
+	Monthly logged in user : 
+		User login Cases: Login in this month and logout in same month.
+						  Login in this month and logout in future.
+						  Login in previous month and logout in previous month.
+						  Login in previous month and logout in current month.
+						  Login in previous month and logout in future.
+					      Login in previous month and not logout yet.
+						  Future login and logout.
+		SO since multiple screen login, we have to get the login and logout time of all the screens of that user and then check in each, if any of the values satisfy this  (loginMonth <= currentMonth && (logoutMonth >= currentMonth || logout == null)) => user is logged_in in this month thus increasing the count.
+
+	Monthly Active user : lastSeenAt.Month == currentMonth
+	Added a session check and also data correctness check.
+    
+	More Data: - More details about the question,what monthly logged_in user means and with example would be great.
+			   - Session Duration: Include information about the duration of each user session. This would help distinguish between short-term and long-term logins and activity.
+			   - Data modals,if possible.
