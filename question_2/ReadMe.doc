@@ -1,0 +1,5 @@
+HOW TO RUN:
+STEP 1 - Run this command in the terminal of folder "npm install -g ts-node typescript '@types/node'"
+STEP 2 - Run command "ts-node Task.ts"
+Enjoy the answer;
+
