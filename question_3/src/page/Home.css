@@ -1,0 +1,73 @@
+.content{
+    width:96vw;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.contentBody{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Card background color*/
+.C {
+    background: rgb(254, 186, 150);
+    background: linear-gradient(90deg, rgba(254, 186, 150, 1) 25%, rgba(254, 148, 150, 1) 75%);
+}
+.A {
+    background: rgb(133, 196, 247);
+    background: linear-gradient(90deg, rgba(133, 196, 247, 1) 25%, rgba(38, 141, 224, 1) 75%);
+}
+.B {
+    background: rgb(125, 216, 208);
+    background: linear-gradient(90deg, rgba(125, 216, 208, 1) 25%, rgba(39, 201, 179, 1) 75%);
+}
+
+/*Card desing*/
+
+.card{
+    border: none;
+    border-radius: 10px;
+    word-wrap: break-word;
+    width:262px;
+    height: 162px;
+    cursor: pointer;
+}
+.card-body{
+    padding:20px 30px;
+    position: relative;
+    text-decoration: none;
+}
+.card-body img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    vertical-align: middle;
+    border: none;
+}
+.card-body>h2{
+    display: block;
+    font-size: 1.5rem;
+}
+.card-body>h4{
+    font-size: 1.13rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+  /*Icon design*/
+  .icon {
+    width: 25px;
+    height: 25px;
+}
+
+
+.dashCards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
